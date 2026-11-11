@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkib Gambar PPD Bera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk Mod Gelap -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Kesan animasi pada kad gambar */
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cantikkan scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        .dark ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 antialiased flex flex-col min-h-screen relative transition-colors duration-300">
+
+    <!-- Latar Belakang Watermark -->
+    <div class="fixed inset-0 z-0 flex items-center justify-center pointer-events-none opacity-5 dark:opacity-[0.02]" style="z-index: -1;">
+        <img src="https://i.postimg.cc/25xgpssq/LOGO.png" alt="Watermark" class="w-[300px] md:w-[600px] object-contain grayscale dark:brightness-200">
+    </div>
+
+    <!-- Bahagian Header / Menu Atas -->
+    <header class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-sm border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo & Nama -->
+                <div class="flex items-center gap-3">
+                    <img src="https://i.postimg.cc/25xgpssq/LOGO.png" alt="Logo PPD Bera" class="w-11 h-11 object-contain">
+                    <div>
+                        <h1 class="font-bold text-xl tracking-tight text-blue-900 dark:text-blue-400">PPD Bera</h1>
+                        <p class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">Arkib Gambar Rasmi</p>
+                    </div>
+                </div>
+                
+                <!-- Butang Mod Gelap & Google Drive -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Butang Toggle Mod Gelap -->
+                    <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-full text-sm p-2.5 transition-colors">
+                        <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun text-lg"></i>
+                    </button>
+
+                    <a href="https://drive.google.com/drive/folders/MASUKKAN_LINK_GOOGLE_DRIVE_ANDA_DI_SINI" target="_blank" class="flex items-center gap-2 bg-emerald-100 dark:bg-emerald-900/40 hover:bg-emerald-200 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold transition-colors shadow-sm">
+                        <i class="fa-brands fa-google-drive text-emerald-600 dark:text-emerald-400 text-lg"></i>
+                        <span class="hidden sm:inline">Lihat Album Drive</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bahagian Tajuk Utama (Hero/Banner) -->
+    <div class="relative py-12 lg:py-20 flex flex-col items-center justify-center min-h-[400px] overflow-hidden">
+        
+        <!-- Gambar Latar Belakang WhatsApp Baharu -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://i.postimg.cc/mgMMXRvP/Whats-App-Image-2026-05-05-at-5-14-54-PM.jpg" alt="Background PPD Bera" class="w-full h-full object-cover">
+            <!-- Overlay gelap supaya teks dan logo nampak menonjol -->
+            <div class="absolute inset-0 bg-slate-900/80"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+            
+            <!-- Logo Bera Unggul (Sangat Jelas & Besar di Tengah) -->
+            <div class="mb-6 flex justify-center">
+                <img src="https://i.postimg.cc/Z5K0GdDk/Whats-App-Image-2026-05-05-at-5-14-54-PM-removebg-preview.png" alt="Logo Bera Unggul" class="w-56 sm:w-64 md:w-80 h-auto drop-shadow-2xl">
+            </div>
+
+            <!-- Teks Tajuk -->
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">
+                Galeri Kenangan <span class="text-blue-400">PPD Bera</span>
+            </h2>
+            <p class="text-slate-300 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+                Koleksi gambar rasmi program, majlis, dan aktiviti pendidikan mengikut sektor di daerah Bera.
+            </p>
+            
+            <!-- Kotak Carian -->
+            <div class="relative w-full max-w-lg mx-auto">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+                </div>
+                <input type="text" id="searchInput" placeholder="Cari aktiviti... (cth: sukan, mesyuarat)" class="block w-full pl-11 pr-4 py-3.5 border border-slate-600/50 rounded-full leading-5 bg-slate-800/80 backdrop-blur-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-xl transition-all" onkeyup="filterBySearch()">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Kandungan Utama (Galeri) -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10">
+        
+        <!-- Visitor Counter -->
+        <div class="flex justify-center items-center mb-10 mt-2">
+            <div class="bg-white dark:bg-slate-800 px-6 py-3 rounded-full shadow-md border border-slate-200 dark:border-slate-700 flex items-center gap-3 transition-colors">
+                <i class="fa-solid fa-chart-simple text-lg text-slate-700 dark:text-slate-300"></i>
+                <span class="text-sm font-extrabold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Pelawat:</span>
+                <div class="filter grayscale contrast-125 brightness-50 dark:brightness-150 flex items-center transform scale-125 origin-left ml-2 gap-2">
+                    <script type="text/javascript" src="https://www.free-counters.org/count/kf4y"></script>
+                    <a href='https://www.versicherungen.at/fahrrad-e-bike-garantieversicherung/' style="position: absolute; left: -9999px;">Garantieversicherung Fahrrad</a> 
+                    <script type='text/javascript' src='https://www.whomania.com/ctr?id=72ba88a8f885185e873b9ed96657e6c3a793a4dd'></script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Butang Tapisan (Filter) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="filterContainer">
+            <button class="filter-btn active bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-md transition-colors" data-filter="semua">Semua</button>
+            <button class="filter-btn bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" data-filter="perancangan_pengurusan">Perancangan & Pengurusan</button>
+            <button class="filter-btn bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" data-filter="pengurusan_sekolah">Pengurusan Sekolah</button>
+            <button class="filter-btn bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" data-filter="pembangunan_murid">Pembangunan Murid</button>
+            <button class="filter-btn bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" data-filter="pembelajaran">Pembelajaran</button>
+        </div>
+
+        <!-- Grid Gambar -->
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Gambar akan dimasukkan di sini oleh JavaScript -->
+        </div>
+
+        <!-- Mesej jika gambar tidak dijumpai -->
+        <div id="emptyState" class="hidden text-center py-16">
+            <i class="fa-regular fa-folder-open text-5xl text-slate-300 dark:text-slate-600 mb-4"></i>
+            <h3 class="text-xl font-medium text-slate-900 dark:text-white">Tiada gambar dijumpai</h3>
+            <p class="text-slate-500 dark:text-slate-400 mt-1">Cuba carian atau kategori sektor lain.</p>
+        </div>
+    </main>
+
+    <!-- Bahagian Bawah (Footer) -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto relative z-10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto py-6 px-4 flex flex-col items-center justify-center gap-3">
+            <p class="text-slate-500 dark:text-slate-400 text-[8px] italic font-medium text-center">
+                &copy; 2026 Pejabat Pendidikan Daerah Bera. Hak Cipta Terpelihara.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Skrip Logik Website -->
+    <script>
+        // --- LOGIK MOD GELAP (DARK MODE) ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Periksa sistem / localStorage
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        // Fungsi butang ditekan
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+        // -----------------------------------
+
+        // DATA GAMBAR
+        const galleryData = [
+            { 
+                id: 1, 
+                title: "Bengkel Skor A SPM Pahang Lead Tahun 2026", 
+                category: "pengurusan_sekolah", 
+                date: "07 Oktober 2026", 
+                src: "https://i.postimg.cc/YS8SbqxH/SKORA-1.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1PGVDCmyaQc9TWBL9L2A90gjFeVW6KbQH?usp=drive_link"
+            },
+            { 
+                id: 2, 
+                title: "Majlis Anugerah Kecemerlangan STPM 2025", 
+                category: "pembelajaran", 
+                date: "02 Oktober 2026", 
+                src: "https://i.postimg.cc/cJDTBdqj/STPM-53.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1qxYElkqqDBXYXZIIyNHeILQySPU06si2?usp=drive_link"
+            },
+            { 
+                id: 3, 
+                title: "KOLOKIUM KAJIAN TINDAKAN PERINGKAT DAERAH BERA TAHUN 2025", 
+                category: "pembelajaran", 
+                date: "28 oktober 2026", 
+                src: "https://i.postimg.cc/jS3htM7J/kolokium-213.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/17u-tTyC8OrTUA_PtK898VhksrXtZD_KG?usp=drive_link"
+            },
+            { 
+                id: 4, 
+                title: "MAHRAJAN GURU PENDIDIKAN ISLAM (MGPI) PERINGKAT NEGERI PAHANG TAHUN 2026", 
+                category: "pembelajaran", 
+                date: "29 oktober 2026", 
+                src: "https://i.postimg.cc/yNqkm9qv/MGPI-28.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1CaW3mij9gbzazNFDO-J_xhLc2Qn4_vaC?usp=drive_link"
+            },
+            { 
+                id: 5, 
+                title: "BENGKEL KECEMERLANGAN LMS SPM TAHUN 2026", 
+                category: "pembelajaran", 
+                date: "29 oktober 2026", 
+                src: "https://i.postimg.cc/3Rg5MxFw/IMG-20261001-083722.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1BGwEuZY2inajTyet8EEJoXZs7pCiNOEj?usp=drive_link"
+            },
+            { 
+                id: 6, 
+                title: "MAJLIS ANUGERAH PERKHIDMATAN CEMERLANG TAHUN 2025", 
+                category: "perancangan_pengurusan", 
+                date: "29 september 2026", 
+                src: "https://i.postimg.cc/1t53czV4/APC-136.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1hywqvNra6NFGf7XtRD9XmdSm5hEoAHDJ?usp=sharing"
+            },
+            { 
+                id: 7, 
+                title: "KARNIVAL STEM DAERAH BERA 2025", 
+                category: "pembangunan_murid", 
+                date: "20 jun 2025", 
+                src: "https://i.postimg.cc/d1W9QLKc/IMG-20250623-152837.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/10Ft67N-6FXzl5kL9uLDoS3RllTuBPKdc?usp=drive_link"
+            },
+			{ 
+                id: 8, 
+                title: "KARNIVAL STEM NEGERI 2025", 
+                category: "pembangunan_murid", 
+                date: "20 jun 2025", 
+                src: "https://i.postimg.cc/pXYNH5W1/DSC-0269.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1uIihyTpGZ3t_1bULN0U6dT3KWesJMYOK?usp=drive_link"
+            },
+			{ 
+                id: 9, 
+                title: "KEJOHANAN MEMANAH MSSP 2025", 
+                category: "pembangunan_murid", 
+                date: "14 julai 2025", 
+                src: "https://i.postimg.cc/gJR9vcxG/DSC-0001.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1rW_0iEc06sq8ZcGpv4VnvdDdcD5invth?usp=drive_link"
+            },
+			{ 
+                id: 10, 
+                title: "PROGRAM BICARA PROFESIONAL YBRS. PENGARAH PENDIDIKAN PAHANG BERSAMA PEMIMPIN PENDIDIKAN SEKOLAH-SEKOLAH DAERAH BERA TAHUN 2025", 
+                category: "perancangan_pengurusan", 
+                date: "8 ogos 2025", 
+                src: "https://i.postimg.cc/jjrJRQDK/DSC-0068.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1_r8rzZNuWNSaQG1rla8066FUPdiGTuaP?usp=drive_link"
+            },
+			{ 
+                id: 11, 
+                title: "MAJLIS ANUGERAH KECEMERLANGAN SPM & STPM 2024", 
+                category: "pembelajaran", 
+                date: "9 ogos 2025", 
+                src: "https://i.postimg.cc/Z5d9dMT8/IMG-20250809-102319.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1c3nw64AUhjJtRpBwRqsDNtplRCvA5d2Q?usp=drive_link"
+            },
+			{ 
+                id: 12, 
+                title: "SESI FOTOGRAFI RAYA RASMI PPD BERA 2026", 
+                category: "perancangan_pengurusan",
+                date: "16 march 2026",
+                src: "https://i.postimg.cc/KzrsHrt5/DSC-0012.png",
+                albumUrl: "https://drive.google.com/drive/folders/1bV600N_ytWbo5IEkCkbL8TTn4fUqJdGQ?usp=drive_link"
+            },
+			{ 
+                id: 13, 
+                title: "KARNIVAL PRASEKOLAH PERINGKAT DAERAH BERA", 
+                category: "pembelajaran",
+                date: "12 ogos 2025",
+                src: "https://i.postimg.cc/4NFyhSWT/DSC-0001.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/1PNecStM6Moqi2G7tFUi-g8-rHWIXcjEo?usp=drive_link"
+            },
+			{ 
+                id: 14, 
+                title: "MAJLIS SANJUNGAN BAKTI PENDETA BERBUDI", 
+                category: "perancangan_pengurusan",
+                date: "18 ogos 2025",
+                src: "https://i.postimg.cc/SRS5v21M/DSC-0173.jpg",
+                albumUrl: "https://drive.google.com/drive/folders/13zx5--_nr0cTDiLJ-PI2-GHe2oFvcFOh?usp=drive_link"
+            },
+			{ 
+                id: 15, 
+                title: "MAJLIS JASA TERBILANG BUDI GEMILANG", 
+                category: "perancangan_pengurusan",
+                date: "2 september 2025",
+                src: "https://i.postimg.cc/nrqf46z0/DSC-0277.png",
+                albumUrl: "https://drive.google.com/drive/folders/1s5Ecpirl6J6eFxZrSPePKFxuZ3L57K2-?usp=drive_link"
+            },
+        ];
+
+        let currentFilter = 'semua';
+        const galleryGrid = document.getElementById('galleryGrid');
+        const emptyState = document.getElementById('emptyState');
+
+        // Fungsi untuk paparkan gambar
+        function renderGallery(data) {
+            galleryGrid.innerHTML = '';
+            
+            if (data.length === 0) {
+                galleryGrid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            galleryGrid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'gallery-item bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700 cursor-pointer flex flex-col group transition-colors';
+                
+                card.onclick = () => {
+                    if (item.albumUrl && !item.albumUrl.includes("MASUKKAN_LINK_ALBUM_DI_SINI")) {
+                        window.open(item.albumUrl, '_blank');
+                    } else {
+                        console.log("Pautan album belum ditetapkan.");
+                    }
+                };
+                
+                let badgeColor = '';
+                let catName = '';
+                if(item.category === 'perancangan_pengurusan') { badgeColor = 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50'; catName = 'Perancangan & Pengurusan'; }
+                else if(item.category === 'pengurusan_sekolah') { badgeColor = 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50'; catName = 'Pengurusan Sekolah'; }
+                else if(item.category === 'pembangunan_murid') { badgeColor = 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50'; catName = 'Pembangunan Murid'; }
+                else if(item.category === 'pembelajaran') { badgeColor = 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50'; catName = 'Pembelajaran'; }
+                else { badgeColor = 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-600'; catName = 'Lain-lain'; }
+
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-700">
+                        <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-white text-3xl drop-shadow-md"></i>
+                        </div>
+                        <span class="absolute top-3 left-3 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full ${badgeColor} shadow-sm backdrop-blur-sm bg-opacity-90 dark:bg-opacity-100">
+                            ${catName}
+                        </span>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100 leading-snug mb-2 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">${item.title}</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-auto flex items-center gap-1.5 font-medium">
+                            <i class="fa-regular fa-calendar"></i> ${item.date}
+                        </p>
+                    </div>
+                `;
+                galleryGrid.appendChild(card);
+            });
+        }
+
+        // Fungsi Tapisan (Filter) Kategori
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white');
+                    b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                });
+                e.target.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                e.target.classList.add('bg-blue-600', 'text-white');
+
+                currentFilter = e.target.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        // Fungsi Carian
+        function filterBySearch() {
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filteredData = galleryData.filter(item => {
+                const matchCategory = currentFilter === 'semua' || item.category === currentFilter;
+                const matchSearch = item.title.toLowerCase().includes(searchTerm) || item.category.toLowerCase().includes(searchTerm);
+                return matchCategory && matchSearch;
+            });
+
+            renderGallery(filteredData);
+        }
+
+        // Jalankan terus fungsi paparan
+        renderGallery(galleryData);
+    </script>
+</body>
+</html>
